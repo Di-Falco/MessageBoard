@@ -18,11 +18,11 @@ namespace MessageClient.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(int topicId, string username, string messageBody)
+    public async Task<ActionResult> Create(int topicId, string username, string messageBody)
     {
       Message message = new Message { TopicId = topicId, Username = username, PostDate = DateTime.Now, MessageBody = messageBody };
-      Message.Post(message);
-      return RedirectToAction("Details", "Topics", new { id = topicId });
+      await Task.Run(() => Message.Post(message));
+      return Redirect(Request.Headers["Referer"].ToString());
     }
 
     public ActionResult Details(int id)

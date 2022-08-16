@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -40,10 +41,10 @@ namespace MessageClient.Models
       return message;
     }
 
-    public static void Post(Message message)
+    public static async Task Post(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
-      var apiCallTask = MessageApiHelper.Post(jsonMessage);
+      await Task.Run(() => MessageApiHelper.Post(jsonMessage));
     }
 
     public static void Put(Message message)
