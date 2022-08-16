@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Security.Claims
+
+@if (User.Identity.IsAuthenticated)
+{
+  <p>Hello @User.Identity.Name!</p>
+}
+else
+{
+  <a href='Url.Action("Regsiter")'><button>Register</button></a>
+  <a href='Url.Action("Login")'><button>Log In</button></a>
+}
