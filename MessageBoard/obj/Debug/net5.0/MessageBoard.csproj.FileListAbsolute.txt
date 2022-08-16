@@ -33,3 +33,5 @@
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageBoard/obj/Debug/net5.0/ref/MessageBoard.dll
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageBoard/obj/Debug/net5.0/MessageBoard.pdb
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageBoard/obj/Debug/net5.0/MessageBoard.genruntimeconfig.cache
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageBoard/bin/Debug/net5.0/Castle.Core.dll
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageBoard/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Proxies.dll

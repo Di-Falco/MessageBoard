@@ -5,20 +5,22 @@ using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+using System.Diagnostics;
+
 namespace MessageClient.Models
 {
   public class Message
   {
     public int MessageId { get; set; }
+    public int TopicId { get; set; }
     public string Username { get; set; }
-    public string Topic { get; set; }
     public string MessageBody { get; set; }
-    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "0:MM/dd/yyyy")]
+    [DataType(DataType.DateTime)]
     public DateTime PostDate { get; set; }
   
-    public  static List<Message> GetMessages()
+    public static List<Message> GetMessages()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = MessageApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
@@ -29,7 +31,7 @@ namespace MessageClient.Models
 
     public static Message GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = MessageApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
@@ -41,18 +43,18 @@ namespace MessageClient.Models
     public static void Post(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
-      var apiCallTask = ApiHelper.Post(jsonMessage);
+      var apiCallTask = MessageApiHelper.Post(jsonMessage);
     }
 
     public static void Put(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
-      var apiCallTask = ApiHelper.Put(message.MessageId, jsonMessage);
+      var apiCallTask = MessageApiHelper.Put(message.MessageId, jsonMessage);
     }
 
     public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = MessageApiHelper.Delete(id);
     }
 
   }

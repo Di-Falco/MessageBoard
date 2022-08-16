@@ -7,7 +7,7 @@
       <li>ID: @message.MessageId</li>
       @* <li>Post Date: @message.PostDate</li> *@
       <li>User: @message.Username</li>
-      <li>Topic: @message.Topic</li>
+      <li>Topic: @Topic.GetDetails(message.TopicId).Title</li>
       @* <li>@message.MessageBody</li> *@
     </ul>
     <a href='/Messages/Details/@(message.MessageId)'><button>View Details</button></a>

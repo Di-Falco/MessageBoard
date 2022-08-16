@@ -23,7 +23,7 @@ namespace MessageBoard.Controllers
 
     // GET: api/Messages
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Message>>> Get(string username, string topic, DateTime before, DateTime after)
+    public async Task<ActionResult<IEnumerable<Message>>> Get(string username, int topicId, DateTime before, DateTime after)
     {
       var query = _context.Messages.AsQueryable();
       DateTime fallOfRome = new DateTime(476, 9, 4, 0, 0, 0);
@@ -33,9 +33,9 @@ namespace MessageBoard.Controllers
         query = query.Where(entry => entry.Username == username);
       }
 
-      if (topic != null)
+      if (topicId > 0)
       {
-        query = query.Where(entry => entry.Topic == topic);
+        query = query.Where(entry => entry.TopicId == topicId);
       }
       
       if (before > fallOfRome)
@@ -101,7 +101,6 @@ namespace MessageBoard.Controllers
     [HttpPost]
     public async Task<ActionResult<Message>> PostMessage(Message message)
     {
-      message.PostDate = DateTime.Now;
       _context.Messages.Add(message);
       await _context.SaveChangesAsync();
 

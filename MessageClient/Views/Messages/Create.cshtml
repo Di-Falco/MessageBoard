@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MessageClient.Models.Message;
+
+<h4>New Post</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.Username)
+  @Html.HiddenFor(model => model.TopicId)
+
+  @Html.Label("Post Text:")
+  @Html.TextBoxFor(model => model.MessageBody)
+}

@@ -1,9 +1,11 @@
 using System.Threading.Tasks;
 using RestSharp;
 
+using System.Diagnostics;
+
 namespace MessageClient.Models
 {
-  class ApiHelper
+  class MessageApiHelper
   {
     public static async Task<string> GetAll()
     {
@@ -24,7 +26,7 @@ namespace MessageClient.Models
     public static async Task Post(string newMessage)
     {
       RestClient client = new RestClient("http://Localhost:5002/api");
-      RestRequest request = new RestRequest($"animals", Method.POST);
+      RestRequest request = new RestRequest($"messages", Method.POST);
       request.AddHeader("Content-Type", "Application/json");
       request.AddJsonBody(newMessage);
       var response = await client.ExecuteTaskAsync(request);
@@ -35,7 +37,7 @@ namespace MessageClient.Models
       RestClient client = new RestClient("http://localhost:5002/api");
       RestRequest request = new RestRequest($"messages/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
-      request.AddBody(newMessage);
+      request.AddJsonBody(newMessage);
       var response = await client.ExecuteTaskAsync(request);
     }
 

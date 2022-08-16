@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MessageClient.Models
+@model MessageClient.Models.Topic
+
+<h2>Messages in Topic: @Html.DisplayFor(model => model.Title)</h2>
+<hr />
+
+  @foreach (Message message in Model.Messages)
+  {
+    <ul>
+      <li>ID: @message.MessageId</li>
+      @* <li>Post Date: @message.PostDate</li> *@
+      <li>User: @message.Username</li>
+      <li>@message.MessageBody</li>
+    </ul>
+    <a href='/Messages/Details/@(message.MessageId)'><button>View Details</button></a>
+    <br>
+  }
+
+  @using (Html.BeginForm("Create", "Messages"))
+  {
+    @Html.HiddenFor(model => model.TopicId)
+    <input type="hidden" name="topicId" value=@Model.TopicId />
+    <input type="hidden" name="username" value="USER" />
+
+    @Html.Label("Post Text:")
+    <input type="text" name="messageBody" />
+
+    <input type="submit" value="Add Post" />
+  }

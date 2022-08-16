@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MessageClient.Models
+@model MessageClient.Models.Message
+
+<h2>Message Details</h2>
+<hr />
+<h3>User: @Html.DisplayFor(model => model.Username)</h3>
+<h3>Topic: @Topic.GetDetails(Model.TopicId)</h3>
+<h5>@Html.DisplayFor(model => model.PostDate, new { @Value = Model.PostDate.ToString("dddd, dd MMMM yyyy hh:mm tt") })</h5>
+<hr />
+<p>@Html.DisplayFor(model => model.MessageBody)</p>
+@* Add user authenticated edit/delete buttons later *@

@@ -20,6 +20,8 @@ namespace MessageClient.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Title = "Epicoddit";
+            ViewBag.Subtitle = "Home";
             return View();
         }
 

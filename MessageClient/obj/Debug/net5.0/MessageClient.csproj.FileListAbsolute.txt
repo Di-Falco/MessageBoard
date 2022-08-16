@@ -40,3 +40,8 @@
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/ref/MessageClient.dll
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/MessageClient.pdb
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/MessageClient.genruntimeconfig.cache
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Shared/Header.cshtml.g.cs
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Messages/Details.cshtml.g.cs
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Topics/Index.cshtml.g.cs
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Topics/Details.cshtml.g.cs
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Messages/Create.cshtml.g.cs

@@ -11,8 +11,7 @@ namespace MessageBoard.Models
     [StringLength(20)]
     public string Username { get; set; }
     [Required]
-    [StringLength(50, ErrorMessage = "Topic must be less than 50 characters.")]
-    public string Topic { get; set; }
+    public int TopicId { get; set; }
     [Required]
     public string MessageBody { get; set; }
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "0:MM/dd/yyyy")]
