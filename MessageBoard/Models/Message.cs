@@ -15,7 +15,7 @@ namespace MessageBoard.Models
     public string Topic { get; set; }
     [Required]
     public string MessageBody { get; set; }
-    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "0:MM/dd/yyy")]
+    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "0:MM/dd/yyyy")]
     public DateTime PostDate { get; set; }
   }
 }
