@@ -10,11 +10,13 @@ namespace MessageClient.Controllers
   {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly MessageClientContext _context;
 
-    public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+    public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, MessageClientContext context)
     {
       _userManager = userManager;
       _signInManager = signInManager;
+      _context = context;
     }
 
     public ActionResult Index()

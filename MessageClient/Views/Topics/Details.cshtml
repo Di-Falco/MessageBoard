@@ -24,7 +24,7 @@
   {
     @Html.HiddenFor(model => model.TopicId)
     <input type="hidden" name="topicId" value=@Model.TopicId />
-    <input type="hidden" name="username" value="USER" />
+    <input type="hidden" name="username" value=@User.Identity.Name />
 
     @Html.Label("Post Text:")
     <input type="text" name="messageBody" />
