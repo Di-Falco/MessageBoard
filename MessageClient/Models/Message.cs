@@ -53,9 +53,9 @@ namespace MessageClient.Models
       await Task.Run(() => MessageApiHelper.Put(message.MessageId, jsonMessage));
     }
 
-    public static void Delete(int id)
+    public static async Task Delete(int id)
     {
-      var apiCallTask = MessageApiHelper.Delete(id);
+      await Task.Run(() => MessageApiHelper.Delete(id));
     }
 
   }
