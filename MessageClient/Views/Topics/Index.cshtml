@@ -1,15 +1,14 @@
-<h1>All Topics:</h1>
+<h3>All Topics:</h3>
 
-<ol>
+<table class="table">
   @foreach (Topic topic in Model)
   {
-    <ul>
-      <li>ID: @topic.TopicId</li>
-      @* <li>Post Date: @message.PostDate</li> *@
-      <li>Topic: @topic.Title</li>
-      @* <li>@message.MessageBody</li> *@
-    </ul>
-    <a href='/Topics/Details/@(topic.TopicId)'><button>View Messages</button></a>
-    <br>
+      <tr>
+      <th>@topic.Title</th>
+      </tr>
+      <tr>
+      <td style="width:78%">@topic.Description</td>
+      <td style="width:22%" align="right"><a href='/Topics/Details/@(topic.TopicId)'><button class="btn btn-primary">View Messages</button></a></td>
+      </tr>
   }
-</ol>
+</table>

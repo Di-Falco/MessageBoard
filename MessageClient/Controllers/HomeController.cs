@@ -20,7 +20,7 @@ namespace MessageClient.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Title = "Epicoddit";
+            ViewBag.Title = "r/Epicodus";
             ViewBag.Subtitle = "Home";
             return View();
         }

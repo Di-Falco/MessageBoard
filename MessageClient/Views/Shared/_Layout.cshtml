@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Epicoddit</title>
+  <title>r/Epicodus</title>
+  <link rel="icon" type="image/png" href="~/epicodus_favicon_transparent.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="~/css/site.css">
 </head>
@@ -11,6 +12,7 @@
   { @await Html.PartialAsync("Header") }
   else
   { @await Html.PartialAsync("Header2") }
+  <hr />
   <div class="container">
     @RenderBody()
   </div>

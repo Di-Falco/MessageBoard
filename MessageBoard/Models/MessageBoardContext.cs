@@ -23,7 +23,6 @@ namespace MessageBoard.Models
         new Topic { TopicId = 3, Title = "Movies", Description = "Motion Picture Appreciators"},
         new Topic { TopicId = 4, Title = "Sports", Description = "SporsBall... americas passtime"},
         new Topic { TopicId = 5, Title = "Misc", Description = "Anything goes"}
-
       );
     }
   }

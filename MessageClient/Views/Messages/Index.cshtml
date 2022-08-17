@@ -1,16 +1,24 @@
-<h1>All Messages:</h1>
+@using MessageClient.Models
+
+<h3>All Messages:</h3>
 
 <ol>
   @foreach (Message message in Model)
   {
-    <ul>
-      <li>ID: @message.MessageId</li>
-      @* <li>Post Date: @message.PostDate</li> *@
-      <li>User: @message.Username</li>
-      <li>Topic: @Topic.GetDetails(message.TopicId).Title</li>
-      @* <li>@message.MessageBody</li> *@
-    </ul>
-    <a href='/Messages/Details/@(message.MessageId)'><button>View Details</button></a>
+    <table class="table">
+      <thead>
+        <tr>
+        <th>@message.Username &emsp; Topic: @Topic.GetDetails(message.TopicId).Title &emsp; @message.PostDate.ToString("MM/dd/yyyy hh:mm tt")</th>
+        <td align="right">ID: @message.MessageId</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td style="width:78%">@message.MessageBody</td>
+        <td style="width:22%" align="right"><a href='/Messages/Details/@(message.MessageId)'><button class="btn btn-primary">View Details</button></a></td>
+        </tr>
+      </tbody>
+    </table>
     <br>
   }
 </ol>

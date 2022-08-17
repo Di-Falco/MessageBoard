@@ -1,12 +1,8 @@
-@{
-  Layout = "_Layout";
-}
-
 @using MessageClient.ViewModels
 
 @model RegisterViewModel
 
-<h2>Register a new account</h2>
+<h4>Register a new account</h4>
 <hr />
 @using (Html.BeginForm())
 {
@@ -19,5 +15,5 @@
   @Html.LabelFor(user => user.ConfirmPassword)
   @Html.TextBoxFor(user => user.ConfirmPassword)
 
-  <button type="submit">Register</button>
+  <button class="btn btn-primary" type="submit">Register</button>
 }

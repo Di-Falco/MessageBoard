@@ -1,15 +1,15 @@
-@{
-  Layout = "_Layout";
-}
-
 @using MessageClient.Models
 @model MessageClient.Models.Message
 
-<h2>Message Details</h2>
+<h4>Message Details</h4>
 <hr />
-<h3>User: @Html.DisplayFor(model => model.Username)</h3>
-<h3>Topic: @Topic.GetDetails(Model.TopicId).Title</h3>
-<h5>@Html.DisplayFor(model => model.PostDate, new { @Value = Model.PostDate.ToString("dddd, dd MMMM yyyy hh:mm tt") })</h5>
+<h5>User: @Model.Username</h5>
+<h5>Topic: @Topic.GetDetails(Model.TopicId).Title</h5>
+<h6>@Model.PostDate.ToString("dddd, dd MMMM yyyy hh:mm tt")</h6>
 <hr />
 <p>@Html.DisplayFor(model => model.MessageBody)</p>
-@* Add user authenticated edit/delete buttons later *@
+
+@if(User.Identity.IsAuthenticated && User.Identity.Name == Model.Username)
+{
+  <a href='@Url.Action("Delete")'><button class="btn btn-danger">Delete This Message</button></a>
+}

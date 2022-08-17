@@ -5,18 +5,24 @@
 @using MessageClient.Models
 @model MessageClient.Models.Topic
 
-<h2>Messages in Topic: @Html.DisplayFor(model => model.Title)</h2>
+<h4>Messages in Topic: @Html.DisplayFor(model => model.Title)</h4>
 <hr />
 
   @foreach (Message message in Model.Messages)
   {
-    <ul>
-      <li>ID: @message.MessageId</li>
-      @* <li>Post Date: @message.PostDate</li> *@
-      <li>User: @message.Username</li>
-      <li>@message.MessageBody</li>
-    </ul>
-    <a href='/Messages/Details/@(message.MessageId)'><button>View Details</button></a>
+    <table class="table">
+      <thead>
+        <tr>
+        <th>@message.Username &emsp; @message.PostDate.ToString("MM/dd/yyyy hh:mm tt")</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td style="width:78%">@message.MessageBody</td>
+        <td style="width:22%" align="right"><a href='/Messages/Details/@(message.MessageId)'><button class="btn btn-primary">View Details</button></a></td>
+        </tr>
+      </tbody>
+    </table>
     <br>
   }
 
@@ -26,8 +32,11 @@
     <input type="hidden" name="topicId" value=@Model.TopicId />
     <input type="hidden" name="username" value=@User.Identity.Name />
 
-    @Html.Label("Post Text:")
-    <input type="text" name="messageBody" />
+    <h5>Add a new post:</h5>
+    <textarea rows="3" cols="60" name="messageBody">
+      
+    </textarea>
+    <br>
 
-    <input type="submit" value="Add Post" />
+    <input class="btn btn-primary" type="submit" value="Add Post" />
   }
