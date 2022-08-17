@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-  @await Html.PartialAsync("Header")
+  @if(User.Identity.IsAuthenticated)
+  { @await Html.PartialAsync("Header") }
+  else
+  { @await Html.PartialAsync("Header2") }
   <div class="container">
     @RenderBody()
   </div>
