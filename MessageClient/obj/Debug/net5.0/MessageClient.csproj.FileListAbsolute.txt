@@ -59,3 +59,4 @@
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Accounts/Index.cshtml.g.cs
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Accounts/Login.cshtml.g.cs
 /Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Accounts/Register.cshtml.g.cs
+/Users/difalcoa/Desktop/epicodus/MessageBoard.Solution/MessageClient/obj/Debug/net5.0/Razor/Views/Messages/Edit.cshtml.g.cs

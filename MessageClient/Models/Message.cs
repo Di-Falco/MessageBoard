@@ -47,10 +47,10 @@ namespace MessageClient.Models
       await Task.Run(() => MessageApiHelper.Post(jsonMessage));
     }
 
-    public static void Put(Message message)
+    public static async Task Put(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
-      var apiCallTask = MessageApiHelper.Put(message.MessageId, jsonMessage);
+      await Task.Run(() => MessageApiHelper.Put(message.MessageId, jsonMessage));
     }
 
     public static void Delete(int id)

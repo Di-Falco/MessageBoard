@@ -35,5 +35,26 @@ namespace MessageClient.Controllers
       ViewBag.Subtitle = "Post Details";
       return View(Message.GetDetails(id));
     }
+
+    public ActionResult Edit(int id)
+    {
+      ViewBag.Title = "Posts";
+      ViewBag.Subtitle = "Edit Message";
+      return View(Message.GetDetails(id));
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Edit(Message message)
+    {
+      await Task.Run(() => Message.Put(message));
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Delete(int id)
+    {
+      await Task.Run(() => Message.Delete(id));
+      return RedirectToAction("Index");
+    }
   }
 }
