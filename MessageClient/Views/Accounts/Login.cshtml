@@ -11,11 +11,11 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(m => m.Name)
-  @Html.TextBoxFor(m => m.Name)
+  @Html.LabelFor(model => model.UserName)
+  @Html.TextBoxFor(model => model.UserName)
 
-  @Html.LabelFor(m => m.Password)
-  @Html.EditorFor(m => m.Password)
+  @Html.LabelFor(model => model.Password)
+  @Html.PasswordFor(model => model.Password)
 
   <button type="submit">Log In</button>
 }

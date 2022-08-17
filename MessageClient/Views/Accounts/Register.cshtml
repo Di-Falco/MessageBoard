@@ -10,11 +10,8 @@
 <hr />
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(user => user.Name)
-  @Html.TextBoxFor(user => user.Name)
-
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user => user.Email)
+  @Html.LabelFor(user => user.UserName)
+  @Html.TextBoxFor(user => user.UserName)
 
   @Html.LabelFor(user => user.Password)
   @Html.TextBoxFor(user => user.Password)
