@@ -109,3 +109,7 @@ body {
 textarea {
   color: #777;
 }
+
+select {
+  font-size: 64px;
+}

@@ -6,14 +6,29 @@
 <hr />
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(user => user.UserName)
-  @Html.TextBoxFor(user => user.UserName)
-
-  @Html.LabelFor(user => user.Password)
-  @Html.TextBoxFor(user => user.Password)
-
-  @Html.LabelFor(user => user.ConfirmPassword)
-  @Html.TextBoxFor(user => user.ConfirmPassword)
-
+  <table class="table">
+    <tr>
+    <th>@Html.LabelFor(user => user.UserName)</th>
+    <td>@Html.TextBoxFor(user => user.UserName)</td>
+    </tr>
+    <tr>
+    <th>@Html.LabelFor(user => user.Password)</th>
+    <td>@Html.TextBoxFor(user => user.Password)</td>
+    </tr>
+    <tr>
+    <th>@Html.LabelFor(user => user.ConfirmPassword)</th>
+    <td>@Html.TextBoxFor(user => user.ConfirmPassword)</td>
+    </tr>
+    @* <tr>
+    <th>Profile Icon</th>
+    <td><select name="ProfileIcon" id="ProfileIcon">
+      <option class="icon" value="128512">&#128512;</option>
+      <option class="icon" value="128563">&#128563;</option>
+      <option class="icon" value="128554">&#128554;</option>
+      <option class="icon" value="128540">&#128540;</option>
+      <option class="icon" value="128526">&#128526;</option>
+    </select></td>
+    </tr> *@
+  </table>
   <button class="btn btn-primary" type="submit">Register</button>
 }

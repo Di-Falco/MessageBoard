@@ -1,7 +1,9 @@
 @using System.Security.Claims
+@model MessageClient.Models.ApplicationUser
 
 @if (User.Identity.IsAuthenticated)
 {
+  @* <h3>@Model.ProfileIcon</h3> *@
   <p>Hello @User.Identity.Name!</p>
 }
 else
