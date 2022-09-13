@@ -70,8 +70,8 @@ This repository contains two files:
 <summary><strong>To Run</strong></summary>
 
 1. Navigate to:  
-   <pre>MessageBoard / MessageClient
-   └── <strong><font color="yellow">Pastries</font></strong></pre>
+   <pre>MessageBoard
+   └── <strong><font color="yellow">MessageBoard / MessageClient</font></strong></pre>
 
 2. Run `$ dotnet restore` in the console.  
 3. Run `$ dotnet database update` in the console.  
